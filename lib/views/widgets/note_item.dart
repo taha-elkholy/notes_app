@@ -38,7 +38,7 @@ class NoteItem extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .titleSmall
-                      ?.copyWith(color: Colors.black.withOpacity(0.4)),
+                      ?.copyWith(color: Colors.black.withOpacity(0.5),),
                 ),
               ),
               trailing: IconButton(
@@ -46,7 +46,7 @@ class NoteItem extends StatelessWidget {
                 icon: Icon(
                   FontAwesomeIcons.trash,
                   color: Colors.black,
-                  size: 30.sp,
+                  size: 24.sp,
                 ),
               ),
             ),
@@ -55,7 +55,7 @@ class NoteItem extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .titleSmall
-                  ?.copyWith(color: Colors.black.withOpacity(0.4)),
+                  ?.copyWith(color: Colors.black.withOpacity(0.5),),
             ),
           ],
         ),
