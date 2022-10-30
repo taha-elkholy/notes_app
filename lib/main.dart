@@ -22,7 +22,7 @@ class NotesApp extends StatelessWidget {
         textTheme: const TextTheme(
           titleLarge: TextStyle(fontSize: 28),
           titleMedium: TextStyle(fontSize: 26),
-          titleSmall: TextStyle(fontSize: 16),
+          titleSmall: TextStyle(fontSize: 18),
         ),
       ),
       home: const NotesView(),
