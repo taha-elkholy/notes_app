@@ -9,12 +9,11 @@ environment:
   sdk: '>=2.18.2 <3.0.0'
 
 dependencies:
-  cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-  flutter_screenutil: ^5.5.4
   font_awesome_flutter: ^10.2.1
-
+  cupertino_icons: ^1.0.2
+  
 dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:

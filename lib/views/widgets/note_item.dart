@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NoteItem extends StatelessWidget {
@@ -10,10 +9,10 @@ class NoteItem extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: const Color(0xffffcc80),
-        borderRadius: BorderRadius.circular(16.r),
+        borderRadius: BorderRadius.circular(16),
       ),
       child: Padding(
-        padding: EdgeInsets.all(24.w),
+        padding: const EdgeInsets.all(24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisSize: MainAxisSize.min,
@@ -30,32 +29,30 @@ class NoteItem extends StatelessWidget {
                     ?.copyWith(color: Colors.black),
               ),
               subtitle: Padding(
-                padding: EdgeInsets.symmetric(vertical: 16.sp),
+                padding: const EdgeInsets.symmetric(vertical: 16),
                 child: Text(
                   'Build Your Career with Taha Elkholy',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleSmall
-                      ?.copyWith(color: Colors.black.withOpacity(0.5),),
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        color: Colors.black.withOpacity(0.5),
+                      ),
                 ),
               ),
               trailing: IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   FontAwesomeIcons.trash,
                   color: Colors.black,
-                  size: 24.sp,
+                  size: 24,
                 ),
               ),
             ),
             Text(
               'May 22 ,2022',
-              style: Theme.of(context)
-                  .textTheme
-                  .titleSmall
-                  ?.copyWith(color: Colors.black.withOpacity(0.5),),
+              style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    color: Colors.black.withOpacity(0.5),
+                  ),
             ),
           ],
         ),
