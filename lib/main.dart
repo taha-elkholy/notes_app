@@ -24,6 +24,14 @@ class NotesApp extends StatelessWidget {
           titleMedium: TextStyle(fontSize: 26),
           titleSmall: TextStyle(fontSize: 18),
         ),
+        bottomSheetTheme: const BottomSheetThemeData(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(16),
+              topRight: Radius.circular(16),
+            ),
+          ),
+        ),
       ),
       home: const NotesView(),
     );
