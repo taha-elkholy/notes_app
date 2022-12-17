@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:notes_app/constants.dart';
+import 'package:notes_app/models/note.dart';
 import 'package:notes_app/views/notes_view.dart';
 
-void main() {
-  runApp(const NotesApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(NoteAdapter());
+  await Hive.openBox<Note>(noteBoxKey);
+
+  runApp(
+    const ProviderScope(
+      child: NotesApp(),
+    ),
+  );
 }
 
 class NotesApp extends StatelessWidget {

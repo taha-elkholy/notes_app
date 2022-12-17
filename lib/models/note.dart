@@ -1,46 +1,40 @@
-import 'package:flutter/foundation.dart';
+import 'package:hive/hive.dart';
 
-@immutable
-class Note {
-  final int id;
+part 'note.g.dart';
+
+@HiveType(typeId: 0)
+class Note extends HiveObject {
+  @HiveField(0)
   final String title;
-  final String body;
-  final DateTime dateTime;
+  @HiveField(1)
+  final String subTitle;
+  @HiveField(2)
+  final String date;
+  @HiveField(3)
+  final int color;
 
-  const Note({
-    required this.id,
+  Note({
     required this.title,
-    required this.body,
-    required this.dateTime,
+    required this.subTitle,
+    required this.date,
+    required this.color,
   });
-
-  factory Note.fromJson(Map<String, dynamic> json) {
+  Note copyWith({
+    String? title,
+    String? subTitle,
+    String? date,
+    int? color,
+  }) { 
     return Note(
-      id: json['id'] as int,
-      title: json['title'] as String,
-      body: json['body'] as String,
-      dateTime: json['dateTime'] as DateTime,
-    );
-  }
-
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'title': title,
-        'body': body,
-        'dateTime': dateTime,
-      };
-
-  Note copyWith({String? title, String? body, DateTime? dateTime}) {
-    return Note(
-      id: id,
       title: title ?? this.title,
-      body: body ?? this.body,
-      dateTime: dateTime ?? this.dateTime,
+      subTitle: subTitle ?? this.subTitle,
+      date: date ?? this.date,
+      color: color ?? this.color,
     );
   }
 
   @override
   String toString() {
-    return '(Note: id = $id, title = $title, body = $body, dateTime = $dateTime)';
+    return '(Note: title = $title, subTitle = $subTitle, date = $date, color = $color)';
   }
 }
