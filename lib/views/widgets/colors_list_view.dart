@@ -53,7 +53,7 @@ class _ColorsListViewState extends ConsumerState<ColorsListView> {
                     if (currentColor == colorsList[index])
                       const Icon(
                         Icons.check,
-                        color: Colors.white,
+                        color: Colors.black,
                       )
                   ],
                 ),
