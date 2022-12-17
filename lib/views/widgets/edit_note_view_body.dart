@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:notes_app/models/note.dart';
 import 'package:notes_app/providers/notes/notes_provider.dart';
 import 'package:notes_app/providers/notes/notes_state.dart';
+import 'package:notes_app/views/widgets/colors_list_view.dart';
 import 'package:notes_app/views/widgets/custom_app_bar.dart';
 import 'package:notes_app/views/widgets/custom_text_field.dart';
 
@@ -42,10 +43,15 @@ class _EditNoteViewBodyState extends ConsumerState<EditNoteViewBody> {
             title: 'Edit Note',
             icon: Icons.check,
             onTap: () async {
+              final color = ref.watch(colorsProvider);
               if (title != widget.note.title ||
-                  subTitle != widget.note.subTitle) {
-                final note =
-                    widget.note.copyWith(title: title, subTitle: subTitle);
+                  subTitle != widget.note.subTitle ||
+                  color != widget.note.color) {
+                final note = widget.note.copyWith(
+                  title: title,
+                  subTitle: subTitle,
+                  color: color,
+                );
                 await ref.read(notesProvider.notifier).updateNote(
                       widget.note.key,
                       note,
@@ -74,6 +80,10 @@ class _EditNoteViewBodyState extends ConsumerState<EditNoteViewBody> {
             },
             maxLines: 3,
           ),
+          const SizedBox(
+            height: 16,
+          ),
+          const ColorsListView()
         ],
       ),
     );
